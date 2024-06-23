@@ -54,7 +54,7 @@ func main() {
 // public entrypoint/function
 func Lissajous(out io.Writer) {
     lissajous(out)
-    fmt.Println("yo") // as a test of $ go clean -modcache
+//    fmt.Println("yo") // as a test of $ go clean -modcache
 }
 
 // private entrypoint/function
