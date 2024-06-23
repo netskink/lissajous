@@ -1,6 +1,6 @@
 // Lissajous generates GIF animations of random Lissajous figures.
 // ch 1.4
-package main
+package lissajous
 
 // When using the intellisense for a routine, it will
 // autodetect the package import and add it here.
