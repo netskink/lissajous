@@ -51,6 +51,12 @@ func main() {
 	lissajous(os.Stdout)
 }
 
+// public entrypoint/function
+func Lissajous(out io.Writer) {
+	lissajous(os.Stdout)
+}
+
+// private entrypoint/function
 func lissajous(out io.Writer) {
 
 	// const is similar to var but its a constant variable.  Note
