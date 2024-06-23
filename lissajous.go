@@ -53,7 +53,7 @@ func main() {
 
 // public entrypoint/function
 func Lissajous(out io.Writer) {
-	lissajous(os.Stdout)
+	lissajous(out)
 }
 
 // private entrypoint/function
