@@ -70,6 +70,7 @@ func lissajous(out io.Writer, cycles_in int) {
 	// how he is making all these in a block rather than individual
 	// const variable = value  lines.
 	//var cycles  = cycles_in     // number of complete x ossillator revolutions
+        var cycles float64 = float64(cycles_in)
 	const (	res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
 		nframes = 64    // number of animation frames
@@ -96,7 +97,7 @@ func lissajous(out io.Writer, cycles_in int) {
 		// freq is random the first time and fixed but phase starts
 		// at zero and increases with each iteration.
 		// Each time it draws a pixel using SetColorIndex
-		for t := 0.0; t < cycles_in*2*math.Pi; t += res {
+		for t := 0.0; t < cycles*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			// EX 1.6
