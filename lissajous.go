@@ -12,6 +12,7 @@ import (
 	"math"
 	"math/rand"
 	"os"
+        "fmt"
 )
 
 // this is a composite literal. A compact notation
