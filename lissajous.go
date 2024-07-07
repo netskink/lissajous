@@ -49,28 +49,28 @@ const (
 )
 
 func main() {
-	lissajous(os.Stdout)
+	lissajous(os.Stdout, 5)
 }
 
 // public entrypoint/function
-func Lissajous(out io.Writer) {
+func Lissajous(out io.Writer, cycles int) {
+    // just to see if its working
+    fmt.Println("==  lissajous.go:Lissajous() ===") // as a test of $ go clean -modcache
+    fmt.Printf("    lissajous.go:Lissajous() cycles: %d ===\n", cycles) // as a test of $ go clean -modcache
     // force an error
     //lissajous(os.Stdout)
     // Normal 
-    lissajous(out)
-    // just to see if its working
-    fmt.Println("==  lissajous.go:Lissajous() ===") // as a test of $ go clean -modcache
+    lissajous(out, cycles)
 }
 
 // private entrypoint/function
-func lissajous(out io.Writer) {
+func lissajous(out io.Writer, cycles_in int) {
 
 	// const is similar to var but its a constant variable.  Note
 	// how he is making all these in a block rather than individual
 	// const variable = value  lines.
-	const (
-		cycles  = 5     // number of complete x ossillator revolutions
-		res     = 0.001 // angular resolution
+	//var cycles  = cycles_in     // number of complete x ossillator revolutions
+	const (	res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
 		nframes = 64    // number of animation frames
 		delay   = 8     // delay between frames in 10ms unit
@@ -96,7 +96,7 @@ func lissajous(out io.Writer) {
 		// freq is random the first time and fixed but phase starts
 		// at zero and increases with each iteration.
 		// Each time it draws a pixel using SetColorIndex
-		for t := 0.0; t < cycles*2*math.Pi; t += res {
+		for t := 0.0; t < cycles_in*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			// EX 1.6
