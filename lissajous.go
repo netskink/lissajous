@@ -54,9 +54,11 @@ func main() {
 // public entrypoint/function
 func Lissajous(out io.Writer) {
     // force an error
-    lissajous(os.Stdout)
-    //lissajous(out)
-//    fmt.Println("yo") // as a test of $ go clean -modcache
+    //lissajous(os.Stdout)
+    // Normal 
+    lissajous(out)
+    // just to see if its working
+    fmt.Println("==  lissajous.go:Lissajous() ===") // as a test of $ go clean -modcache
 }
 
 // private entrypoint/function
